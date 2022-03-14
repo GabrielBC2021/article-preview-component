@@ -1,0 +1,272 @@
+/* Family font import */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    /* Colors */
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+
+    /* Familly font */
+    --Family-font: 'Manrope', sans-serif;
+}
+
+/* Apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    width: 100%;
+}
+
+/* Body */
+body {
+    display: grid;
+    place-items: center;
+    background-color: var(--Light-Grayish-Blue);
+    font-family: var(--Family-font);
+    margin: 0;
+    min-height: 100vh;
+    font-size: 13px;
+}
+
+/* Main - grid */
+.content {
+    margin: 2rem;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.grid {
+    grid-auto-flow: row;
+    background-color: white;    
+    border-radius: 10px;
+}
+
+/* Image column */
+.image-column{
+    height: 100%;
+    object-fit: contain;
+}
+
+.image-column img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Information column */
+.information-column {
+    padding: 2.5rem;
+}
+
+/* h1 */
+.information-column h1 {
+    margin: 0;
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+}
+
+.information-column p {
+    color: var(--Desaturated-Dark-Blue);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Columns */
+.columns {
+    display: grid;
+    grid-template-columns: 0fr 1fr 0fr;
+    gap: .2rem;
+    align-items: center;
+    justify-items: start;
+}
+
+/* First column */
+.first-column {
+    background-image: url(/images/avatar-michelle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+/* Second column */
+.second-column h2, .second-column p{
+    margin: 0;
+    line-height: 1.7;
+}
+
+.second-column h2 {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+}
+
+/* Third column */
+.third-column {
+    display: flex;
+    content: "";
+    background: var(--Light-Grayish-Blue) url(./images/icon-share.svg) center no-repeat;
+    background-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+/* Mobile active Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    border-radius: 8px;
+    padding: .8rem;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: -40px;
+    margin-left: -60px;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: all .5s ease;
+}
+
+.third-column span {
+    color: var(--Light-Grayish-Blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.tooltiptext img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive */
+@media (min-width: 400px) {
+    .content {
+        width: 70%;
+    }
+
+    .image-column img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .columns {
+        column-gap: 1rem;
+    }
+
+
+    /* Tooltip */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .tooltip .tooltiptext {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-items: center;
+        
+        visibility: hidden;
+        width: 200px;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        border-radius: 8px;
+        padding: .8rem;
+        
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: -40px;
+        margin-left: -60px;
+    }
+    
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    .tooltip:hover {
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        transition: all .5s ease;
+    }
+
+    .third-column span {
+        color: var(--Light-Grayish-Blue);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .tooltiptext img {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+@media (min-width: 800px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        align-content: center;
+    }
+
+    .content {
+        width: 70%;
+    }
+
+    .image-column img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+}
+
+@media (min-width: 1098px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        align-content: center;
+    }
+
+    .content {
+        width: 60%;
+    }
+}
+
+@media (min-width: 2560px) {
+    .content {
+        width: 50%;
+    }
+}
